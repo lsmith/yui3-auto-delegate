@@ -1,0 +1,15 @@
+YUI 3 module to add support for event delegation in the node.on(..) method by
+providing the target selector as an event prefix.
+
+Y.one('#list').on('li:click', function (e) {
+    this.toggleClass('on');
+});
+
+as a sugar method for the node.delegate(..) method
+Y.one('#list').delegate('click', function (e) {
+    this.toggleClass('on');
+}, 'li');
+
+
+General form:
+node.on(selectorString + ':' + eventName, handler)
