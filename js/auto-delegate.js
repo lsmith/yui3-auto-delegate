@@ -4,7 +4,7 @@ var ET_ON = Y.EventTarget.prototype.on;
 
 Y.Node.prototype.on = function (type) {
     var args = Y.Array(arguments,0,true),
-        m    = type.match(/(.+?\|)?(.+)?:(.+)$/),
+        m    = type.match(/(.+?\|)?(.+)?\s*:\s*([^:]+)$/),
         meth = ET_ON;
 
     if (m) {
